@@ -1,0 +1,60 @@
+
+
+}
+.head-background
+  {
+      -fx-background-color: linear-gradient(to left,#795AF3 ,#3929E0);
+  }
+
+.button
+{
+    -fx-background-color :  linear-gradient(to top left, #2A292F,#2E2C39 );
+    -fx-background-radius :  0 0 0 0;
+}
+.button:hover
+{
+    -fx-background-color :  linear-gradient(to top left, #2A292F,#616161 ) ;
+}
+.button:pressed
+{
+    -fx-background-color :  linear-gradient(to top left, #2A292F,#616161 ) ;
+}
+
+.button1
+{
+    -fx-background-color :linear-gradient(to top right,  #2A292F, #424242);
+    -fx-background-radius :  30 30 30 30;
+}
+.button1:hover
+{
+    -fx-background-color :linear-gradient(to top left, #424242, #757575);
+    -fx-background-radius :  30 30 30 30;
+}
+.button1:pressed
+{
+    -fx-background-color :linear-gradient(to top left, #757575, #424242);
+    -fx-background-radius :  30 30 30 30;
+}
+
+.combo-box
+{
+    -fx-background-color : #141124;
+    -fx-border-color:  #515658;
+    -fx-border-radius: 30;
+}
+.combo-box:hover
+{
+    -fx-background-color : #141124;
+    -fx-border-color:  #FFFF;
+    -fx-border-radius: 30;
+}
+.combo-box:pressed
+{
+    -fx-background-color : #141124;
+    -fx-border-color:  #FFFF;
+    -fx-border-radius: 30;
+}
+.linear-grad
+{
+    -fx-background-color: linear-gradient(to bottom left, #A868A0, #2D75E8);
+}
