@@ -3,11 +3,17 @@ package Home.Controller;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -45,11 +51,15 @@ public class HomeController implements Initializable {
     }
 
     @FXML
-    private void  HandleClicks(ActionEvent event)
+    private void  HandleClicks(ActionEvent event) throws IOException
     {
         if (event.getSource() == Home)
         {
-
+            Parent HomeParent = FXMLLoader.load(getClass().getResource("../FXML/Home.fxml"));
+            Scene HomeScene = new Scene(HomeParent);
+            Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            window.setScene(HomeScene);
+            window.show();
         }
         else
             {
@@ -65,7 +75,11 @@ public class HomeController implements Initializable {
         }
         if (event.getSource() == SplitMenu)
         {
-
+            Parent SplitParent = FXMLLoader.load(getClass().getResource("../FXML/Split.fxml"));
+            Scene SplitScene = new Scene(SplitParent);
+            Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            window.setScene(SplitScene);
+            window.show();
         }
         else
         {
