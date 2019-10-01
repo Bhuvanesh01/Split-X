@@ -18,6 +18,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class HomeController implements Initializable {
+    private double x, y;
 
     @FXML
     private Button Home;
@@ -60,6 +61,16 @@ public class HomeController implements Initializable {
             Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
             window.setScene(HomeScene);
             window.show();
+            HomeParent.setOnMousePressed(event1 -> {
+                x = event1.getSceneX();
+                y = event1.getSceneY();
+            });
+            HomeParent.setOnMouseDragged(event1 -> {
+
+                window.setX(event1.getScreenX() - x);
+                window.setY(event1.getScreenY() - y);
+
+            });
         }
         else
             {
@@ -67,7 +78,21 @@ public class HomeController implements Initializable {
             }
         if (event.getSource() == JoinMenu)
         {
+            Parent JoinParent = FXMLLoader.load(getClass().getResource("../FXML/Join.fxml"));
+            Scene SplitScene = new Scene(JoinParent);
+            Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            window.setScene(SplitScene);
+            window.show();
+            JoinParent.setOnMousePressed(event1 -> {
+                x = event1.getSceneX();
+                y = event1.getSceneY();
+            });
+            JoinParent.setOnMouseDragged(event1 -> {
 
+                window.setX(event1.getScreenX() - x);
+                window.setY(event1.getScreenY() - y);
+
+            });
         }
         else
         {
@@ -80,6 +105,16 @@ public class HomeController implements Initializable {
             Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
             window.setScene(SplitScene);
             window.show();
+            SplitParent.setOnMousePressed(event1 -> {
+                x = event1.getSceneX();
+                y = event1.getSceneY();
+            });
+            SplitParent.setOnMouseDragged(event1 -> {
+
+                window.setX(event1.getScreenX() - x);
+                window.setY(event1.getScreenY() - y);
+
+            });
         }
         else
         {
