@@ -4,6 +4,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.image.Image?>
@@ -13,12 +14,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to top left, #2A292F,#2E2C39 );" stylesheets="@../Home/CSS/Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.Controller.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to top left, #2A292F,#2E2C39 );" stylesheets="@../Home/CSS/Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.Controller.SplitController">
     <children>
         <VBox prefHeight="500.0" prefWidth="163.0" style="-fx-background-color: #2A292F;" styleClass="bodybg" stylesheets="" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <ImageView fitHeight="102.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" />
-                <Button fx:id="Home" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#HandleClicks" prefHeight="26.0" prefWidth="193.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="Home" textFill="#6dafca">
+                <Button fx:id="Home" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="193.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="Home" textFill="#6dafca">
                     <graphic>
                         <ImageView fitHeight="36.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -36,7 +37,7 @@
                         <Insets left="1.0" right="1.0" top="5.0" />
                     </VBox.margin>
                 </Button>
-                <Button fx:id="JoinMenu" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="112.0" mnemonicParsing="false" onAction="#HandleClicks" prefHeight="26.0" prefWidth="193.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="Join" textFill="#6dafca">
+                <Button fx:id="JoinMenu" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="112.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="193.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="Join" textFill="#6dafca">
                     <graphic>
                         <ImageView fitHeight="36.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -51,7 +52,7 @@
                         <Insets left="1.0" right="1.0" top="5.0" />
                     </VBox.margin>
                 </Button>
-                <Button fx:id="SplitMenu" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="112.0" mnemonicParsing="false" onAction="#HandleClicks" prefHeight="26.0" prefWidth="193.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="Split" textFill="#6dafca">
+                <Button fx:id="SplitMenu" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="112.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="193.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="Split" textFill="#6dafca">
                     <graphic>
                         <ImageView fitHeight="36.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -81,7 +82,7 @@
                         <Insets left="1.0" right="1.0" top="5.0" />
                     </VBox.margin>
                 </Button>
-                <Button fx:id="About" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="112.0" mnemonicParsing="false" onAction="#HandleClicks" prefHeight="26.0" prefWidth="193.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="About Us" textFill="#6dafca">
+                <Button fx:id="About" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="112.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="193.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="About Us" textFill="#6dafca">
                     <graphic>
                         <ImageView fitHeight="36.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -138,7 +139,8 @@
                 </ImageView>
             </graphic>
         </JFXButton>
-      <Button layoutX="646.0" layoutY="203.0" mnemonicParsing="false" text="Browse" />
+      <Button fx:id="Browse" layoutX="646.0" layoutY="203.0" mnemonicParsing="false" onAction="#HandleClicks" prefHeight="34.0" prefWidth="54.0" text="Browse" />
+      <TextField fx:id="txt" layoutX="256.0" layoutY="204.0" prefHeight="34.0" prefWidth="361.0" />
 
 
     </children>
