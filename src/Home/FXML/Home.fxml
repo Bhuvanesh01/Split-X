@@ -10,16 +10,13 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to top left, #2A292F,#2E2C39 );" stylesheets="@../Home/CSS/Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.Controller.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to top left, #2A292F,#2E2C39 );" stylesheets="@../Home/CSS/Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.Controller.HomeController">
    <children>
       <VBox prefHeight="500.0" prefWidth="163.0" style="-fx-background-color: #2A292F;" styleClass="bodybg" stylesheets="" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -126,39 +123,27 @@
             </Lighting>
          </effect>
       </VBox>
-      <GridPane layoutX="181.0" layoutY="133.0" prefHeight="368.0" prefWidth="620.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="181.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="133.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+      <HBox layoutX="181.0" layoutY="43.0" prefHeight="79.0" prefWidth="620.0">
          <children>
-            <JFXButton fx:id="Join" alignment="CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="5.0" onAction="#HandleClicks" prefHeight="150.0" prefWidth="150.0" stylesheets="@../CSS/Style.css" text="Join" textFill="#6dafca" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-               <graphic>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/icons8-merge-files-512%20(2).png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <ripplerFill>
-                  <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0" startX="0.4809160678441288" startY="0.48091611789383054">
-                     <stops>
-                        <Stop color="#40badf" />
-                        <Stop color="#40badf" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </ripplerFill>
+            <Label alignment="CENTER" prefHeight="80.0" prefWidth="620.0" text="File Splitter And Joiner Application" textFill="#6dafca">
                <font>
-                  <Font size="20.0" />
+                  <Font name="Microsoft Tai Le" size="26.0" />
                </font>
-               <effect>
-                  <Shadow />
-               </effect>
-            </JFXButton>
-            <JFXButton fx:id="Split" alignment="CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="5.0" layoutX="90.0" layoutY="119.0" onAction="#HandleClicks" prefHeight="150.0" prefWidth="150.0" stylesheets="@../CSS/Style.css" text="Split" textFill="#6dafca" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            </Label>
+         </children>
+      </HBox>
+      <JFXButton fx:id="BtnClose" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="768.0" layoutY="1.0" onMouseClicked="#ExitApp" prefHeight="24.0" prefWidth="28.0" ripplerFill="#e80606" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="1.0">
+         <graphic>
+            <ImageView fitHeight="11.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/loschen.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <AnchorPane layoutX="181.0" layoutY="121.0" prefHeight="358.0" prefWidth="620.0">
+         <children>
+            <JFXButton fx:id="Split" alignment="CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="5.0" layoutX="361.0" layoutY="93.0" onAction="#HandleClicks" prefHeight="150.0" prefWidth="150.0" stylesheets="@../CSS/Style.css" text="Split" textFill="#6dafca">
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -181,26 +166,31 @@
                   <Shadow />
                </effect>
             </JFXButton>
-         </children>
-      </GridPane>
-      <HBox layoutX="181.0" layoutY="43.0" prefHeight="90.0" prefWidth="620.0">
-         <children>
-            <Label alignment="CENTER" prefHeight="91.0" prefWidth="620.0" text="File Splitter And Joiner Application" textFill="#6dafca">
+            <JFXButton fx:id="Join" alignment="CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="5.0" layoutX="121.0" layoutY="93.0" onAction="#HandleClicks" prefHeight="150.0" prefWidth="150.0" stylesheets="@../CSS/Style.css" text="Join" textFill="#6dafca">
+               <graphic>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/icons8-merge-files-512%20(2).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <ripplerFill>
+                  <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0" startX="0.4809160678441288" startY="0.48091611789383054">
+                     <stops>
+                        <Stop color="#40badf" />
+                        <Stop color="#40badf" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill>
                <font>
-                  <Font name="Microsoft Tai Le" size="26.0" />
+                  <Font size="20.0" />
                </font>
-            </Label>
+               <effect>
+                  <Shadow />
+               </effect>
+            </JFXButton>
          </children>
-      </HBox>
-      <JFXButton fx:id="BtnClose" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="768.0" layoutY="1.0" onMouseClicked="#ExitApp" prefHeight="24.0" prefWidth="28.0" ripplerFill="#e80606" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="1.0">
-         <graphic>
-            <ImageView fitHeight="11.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Images/loschen.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
+      </AnchorPane>
 
 
    </children>

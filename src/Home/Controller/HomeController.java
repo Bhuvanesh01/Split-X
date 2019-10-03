@@ -138,7 +138,21 @@ public class HomeController implements Initializable {
         }
         if (event.getSource() == Join)
         {
+            Parent JoinParent = FXMLLoader.load(getClass().getResource("../FXML/Join.fxml"));
+            Scene SplitScene = new Scene(JoinParent);
+            Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            window.setScene(SplitScene);
+            window.show();
+            JoinParent.setOnMousePressed(event1 -> {
+                x = event1.getSceneX();
+                y = event1.getSceneY();
+            });
+            JoinParent.setOnMouseDragged(event1 -> {
 
+                window.setX(event1.getScreenX() - x);
+                window.setY(event1.getScreenY() - y);
+
+            });
         }
         else
         {
@@ -146,7 +160,21 @@ public class HomeController implements Initializable {
         }
         if (event.getSource() == Split)
         {
+            Parent SplitParent = FXMLLoader.load(getClass().getResource("../FXML/Split.fxml"));
+            Scene SplitScene = new Scene(SplitParent);
+            Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            window.setScene(SplitScene);
+            window.show();
+            SplitParent.setOnMousePressed(event1 -> {
+                x = event1.getSceneX();
+                y = event1.getSceneY();
+            });
+            SplitParent.setOnMouseDragged(event1 -> {
 
+                window.setX(event1.getScreenX() - x);
+                window.setY(event1.getScreenY() - y);
+
+            });
         }
         else
         {
