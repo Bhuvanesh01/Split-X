@@ -9,13 +9,13 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -45,6 +45,9 @@ public class SplitController implements Initializable {
 
     @FXML
     private JFXButton BtnClose;
+
+    @FXML
+    private TextField txt;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -140,7 +143,8 @@ public class SplitController implements Initializable {
             File SelectedFile = fc.showOpenDialog(null);
             if (SelectedFile != null)
             {
-                Path = SelectedFile.getAbsolutePath();
+                txt.setText(SelectedFile.getAbsolutePath());
+                Path = txt.getText();
             }
             else
             {
@@ -148,6 +152,45 @@ public class SplitController implements Initializable {
             }
         }
 
+    }
+    @FXML
+    public Void Splitit(ActionEvent event)
+    { try{
+        //Create Byte Array with 10,00,000 bytes size
+        byte b[] = new byte[1000000];
+        int x=1, j=0;
+        String s = "";
+        InputStreamReader ins = new InputStreamReader(System.in);
+        BufferedReader br = new BufferedReader(ins);
+        FileInputStream fis = new FileInputStream(Path);
+        int read_bytes;
+        while(fis.available()!=0){
+            j=0;
+            s="";
+            if(x<=9){
+                s = Path+".00"+x; // FileName.mp4.001, FileName.mp4.002, ...... , FileName.mp4.009
+            }
+
+            else{
+                s = Path+".0"+x; // FileName.mp4.010, FileName.mp4.011, ...... so on
+            }
+            FileOutputStream fos = new FileOutputStream(s);
+            while(j<=50000000 && fis.available()!=0){
+                read_bytes = fis.read(b, 0, 1000000);
+                j = j + read_bytes;
+                fos.write(b, 0, read_bytes);
+            }
+            System.out.println("Part "+x+" Created.");
+            x++;
+        } // End of Outer While Loop
+        System.out.println("File Splitted Successfully....!!!");
+        fis.close();
+
+    }
+    catch(Exception e){
+        e.printStackTrace();
+    }
+        return null;
     }
 
     @FXML
