@@ -142,6 +142,11 @@
       <Button fx:id="Browse" layoutX="646.0" layoutY="203.0" mnemonicParsing="false" onAction="#HandleClicks" prefHeight="34.0" prefWidth="54.0" text="Browse" />
       <TextField fx:id="txt" layoutX="251.0" layoutY="203.0" prefHeight="34.0" prefWidth="361.0" />
       <Button fx:id="Splits" layoutX="377.0" layoutY="343.0" mnemonicParsing="false" onAction="#Splitit" prefHeight="34.0" prefWidth="143.0" styleClass="linear-grad" stylesheets="@../CSS/Style.css" text="Split" />
+      <ImageView fx:id="progress" fitHeight="13.0" fitWidth="196.0" layoutX="383.0" layoutY="274.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/808.gif" />
+         </image>
+      </ImageView>
 
 
     </children>

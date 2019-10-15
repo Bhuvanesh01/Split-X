@@ -1,6 +1,7 @@
 package Home.Controller;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,11 +10,15 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+
 
 import java.io.*;
 import java.net.URL;
@@ -48,9 +53,13 @@ public class SplitController implements Initializable {
 
     @FXML
     private TextField txt;
+
+    @FXML
+    private ImageView progress;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        progress.setVisible(false);
     }
     @FXML
     private void  HandleClicks(ActionEvent event) throws IOException
@@ -155,7 +164,13 @@ public class SplitController implements Initializable {
     }
     @FXML
     public Void Splitit(ActionEvent event)
-    { try{
+    {   progress.setVisible(true);
+        PauseTransition pt = new PauseTransition();
+        pt.setDuration(Duration.seconds(3));
+        pt.setOnFinished(ev -> {
+           progress.setVisible(false);
+        });
+        try{
         //Create Byte Array with 10,00,000 bytes size
         byte b[] = new byte[1000000];
         int x=1, j=0;
@@ -175,7 +190,7 @@ public class SplitController implements Initializable {
                 s = Path+".0"+x; // FileName.mp4.010, FileName.mp4.011, ...... so on
             }
             FileOutputStream fos = new FileOutputStream(s);
-            while(j<=50000000 && fis.available()!=0){
+            while(j<=50000000 && fis.available()!=0) {
                 read_bytes = fis.read(b, 0, 1000000);
                 j = j + read_bytes;
                 fos.write(b, 0, read_bytes);
@@ -184,6 +199,7 @@ public class SplitController implements Initializable {
             x++;
         } // End of Outer While Loop
         System.out.println("File Splitted Successfully....!!!");
+        pt.play();
         fis.close();
 
     }
