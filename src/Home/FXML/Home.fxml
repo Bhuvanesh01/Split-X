@@ -20,7 +20,10 @@
    <children>
       <VBox prefHeight="500.0" prefWidth="163.0" style="-fx-background-color: #2A292F;" styleClass="bodybg" stylesheets="" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fitHeight="102.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="102.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/Logo1.png" />
+               </image></ImageView>
             <Button fx:id="Home" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#HandleClicks" prefHeight="26.0" prefWidth="193.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="Home" textFill="#6dafca">
                <graphic>
                   <ImageView fitHeight="36.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">

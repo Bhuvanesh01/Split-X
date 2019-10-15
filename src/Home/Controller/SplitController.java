@@ -1,7 +1,6 @@
 package Home.Controller;
 
 import com.jfoenix.controls.JFXButton;
-import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,17 +8,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.util.Duration;
-
-
 import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -54,12 +49,10 @@ public class SplitController implements Initializable {
     @FXML
     private TextField txt;
 
-    @FXML
-    private ImageView progress;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        progress.setVisible(false);
+
     }
     @FXML
     private void  HandleClicks(ActionEvent event) throws IOException
@@ -164,12 +157,12 @@ public class SplitController implements Initializable {
     }
     @FXML
     public Void Splitit(ActionEvent event)
-    {   progress.setVisible(true);
-        PauseTransition pt = new PauseTransition();
-        pt.setDuration(Duration.seconds(3));
-        pt.setOnFinished(ev -> {
-           progress.setVisible(false);
-        });
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText("Your Files Splitted Successfully!!");
+        alert.setHeight(100);
+        alert.setWidth(150);
         try{
         //Create Byte Array with 10,00,000 bytes size
         byte b[] = new byte[1000000];
@@ -198,8 +191,7 @@ public class SplitController implements Initializable {
             System.out.println("Part "+x+" Created.");
             x++;
         } // End of Outer While Loop
-        System.out.println("File Splitted Successfully....!!!");
-        pt.play();
+            alert.show();
         fis.close();
 
     }
