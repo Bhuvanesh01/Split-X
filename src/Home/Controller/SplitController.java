@@ -1,6 +1,9 @@
 package Home.Controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDialog;
+import com.jfoenix.controls.JFXDialogLayout;
+import com.jfoenix.controls.events.JFXDialogEvent;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,9 +13,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
+import javafx.scene.effect.BoxBlur;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import java.io.*;
@@ -22,6 +29,12 @@ import java.util.ResourceBundle;
 public class SplitController implements Initializable {
     private double x, y;
     String Path = null;
+    @FXML
+    private StackPane rootPane;
+
+    @FXML
+    private AnchorPane Anchorpane;
+
     @FXML
     private Button Browse;
 
@@ -82,9 +95,9 @@ public class SplitController implements Initializable {
         if (event.getSource() == JoinMenu)
         {
             Parent JoinParent = FXMLLoader.load(getClass().getResource("../FXML/Join.fxml"));
-            Scene SplitScene = new Scene(JoinParent);
+            Scene JoinScene = new Scene(JoinParent);
             Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            window.setScene(SplitScene);
+            window.setScene(JoinScene);
             window.show();
             JoinParent.setOnMousePressed(event1 -> {
                 x = event1.getSceneX();
@@ -158,11 +171,6 @@ public class SplitController implements Initializable {
     @FXML
     public Void Splitit(ActionEvent event)
     {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Success");
-        alert.setHeaderText("Your Files Splitted Successfully!!");
-        alert.setHeight(100);
-        alert.setWidth(150);
         try{
         //Create Byte Array with 10,00,000 bytes size
         byte b[] = new byte[1000000];
@@ -191,7 +199,21 @@ public class SplitController implements Initializable {
             System.out.println("Part "+x+" Created.");
             x++;
         } // End of Outer While Loop
-            alert.show();
+            BoxBlur blur = new BoxBlur(3,3,3);
+            JFXDialogLayout Dialouglayout = new JFXDialogLayout();
+            JFXButton btnclose = new JFXButton("Close");
+            btnclose.getStyleClass().add("button1");
+            JFXDialog Dialog = new JFXDialog(rootPane , Dialouglayout, JFXDialog.DialogTransition.TOP);
+            btnclose.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent mouseevent )->{
+                Dialog.close();
+        });
+            Dialouglayout.setHeading(new Label("Files Splitted Succesfully!!!!\n"+x+" Parts Created."));
+            Dialouglayout.setActions(btnclose);
+            Dialog.show();
+            Dialog.setOnDialogClosed((JFXDialogEvent event1 ) ->{
+                Anchorpane.setEffect(null);
+            });
+            Anchorpane.setEffect(blur);
         fis.close();
 
     }

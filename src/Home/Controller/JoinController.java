@@ -1,6 +1,9 @@
 package Home.Controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDialog;
+import com.jfoenix.controls.JFXDialogLayout;
+import com.jfoenix.controls.events.JFXDialogEvent;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,13 +13,16 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.BoxBlur;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
 import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,6 +32,13 @@ public class JoinController implements Initializable {
         String Path = null;
         String New_Path = null;
         String file_name = null;
+
+        @FXML
+        private StackPane rootPane2;
+
+        @FXML
+        private AnchorPane AnchorPane2;
+
         @FXML
         private Button Browse;
 
@@ -64,7 +77,7 @@ public class JoinController implements Initializable {
 
         @Override
         public void initialize(URL url, ResourceBundle resourceBundle) {
-            progress.setVisible(false);
+
         }
         @FXML
         private void  HandleClicks(ActionEvent event) throws IOException
@@ -94,9 +107,9 @@ public class JoinController implements Initializable {
             if (event.getSource() == JoinMenu)
             {
                 Parent JoinParent = FXMLLoader.load(getClass().getResource("../FXML/Join.fxml"));
-                Scene SplitScene = new Scene(JoinParent);
+                Scene JoinScene = new Scene(JoinParent);
                 Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-                window.setScene(SplitScene);
+                window.setScene(JoinScene);
                 window.show();
                 JoinParent.setOnMousePressed(event1 -> {
                     x = event1.getSceneX();
@@ -163,7 +176,22 @@ public class JoinController implements Initializable {
                 New_Path = txt1.getText();
             }
             else
-            {
+            {    BoxBlur blur = new BoxBlur(3,3,3);
+                JFXDialogLayout Dialouglayout = new JFXDialogLayout();
+                JFXButton btnclose = new JFXButton("Close");
+                btnclose.getStyleClass().add("button1");
+                JFXDialog Dialog = new JFXDialog(rootPane2 , Dialouglayout, JFXDialog.DialogTransition.TOP);
+                btnclose.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent mouseevent )->{
+                    Dialog.close();
+                });
+                Dialouglayout.setHeading(new Label("Not A Valid File! "));
+                Dialouglayout.setActions(btnclose);
+                Dialog.show();
+                Dialog.setOnDialogClosed((JFXDialogEvent event1 ) ->{
+                    AnchorPane2.setEffect(null);
+                });
+                AnchorPane2.setEffect(blur);
+
                 System.out.println("Not A Valid File");
             }
         }
@@ -177,7 +205,22 @@ public class JoinController implements Initializable {
                     Path = txt.getText();
                 }
                 else
-                {
+                { BoxBlur blur = new BoxBlur(3,3,3);
+                    JFXDialogLayout Dialouglayout = new JFXDialogLayout();
+                    JFXButton btnclose = new JFXButton("Close");
+                    btnclose.getStyleClass().add("button1");
+                    JFXDialog Dialog = new JFXDialog(rootPane2 , Dialouglayout, JFXDialog.DialogTransition.TOP);
+                    btnclose.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent mouseevent )->{
+                        Dialog.close();
+                    });
+                    Dialouglayout.setHeading(new Label("Not A Valid File!"));
+                    Dialouglayout.setActions(btnclose);
+                    Dialog.show();
+                    Dialog.setOnDialogClosed((JFXDialogEvent event1 ) ->{
+                        AnchorPane2.setEffect(null);
+                    });
+                    AnchorPane2.setEffect(blur);
+
                     System.out.println("Not A Valid File");
                 }
             }
@@ -185,12 +228,7 @@ public class JoinController implements Initializable {
         }
         @FXML
         public Void Joinit(ActionEvent event)
-        {   progress.setVisible(true);
-            PauseTransition pt = new PauseTransition();
-            pt.setDuration(Duration.seconds(3));
-            pt.setOnFinished(ev -> {
-                progress.setVisible(false);
-            });
+        {
             try{
                 byte b[] = new byte[10000]; // Create Byte Array With 10,000 bytes size
 
@@ -272,7 +310,21 @@ public class JoinController implements Initializable {
 
                         // All parts are joined. Prints file joined message then break will exit form while
                         else{
-                            System.out.println("File Joined Successfully");
+                            BoxBlur blur1 = new BoxBlur(3,3,3);
+                            JFXDialogLayout Dialouglayout1 = new JFXDialogLayout();
+                            JFXButton btnclose1 = new JFXButton("Close");
+                            btnclose1.getStyleClass().add("button1");
+                            JFXDialog Dialog = new JFXDialog(rootPane2 , Dialouglayout1, JFXDialog.DialogTransition.TOP);
+                            btnclose1.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent mouseevent )->{
+                                Dialog.close();
+                            });
+                            Dialouglayout1.setHeading(new Label("Files Joined Succesfully!!!!"));
+                            Dialouglayout1.setActions(btnclose1);
+                            Dialog.show();
+                            Dialog.setOnDialogClosed((JFXDialogEvent event1 ) ->{
+                                AnchorPane2.setEffect(null);
+                            });
+                            AnchorPane2.setEffect(blur1);
                             break;
                         }
                     }
@@ -280,16 +332,62 @@ public class JoinController implements Initializable {
 
                 // If user entered wrong original or new file path
                 else if(!(check_new_file_path.exists())){
+                    BoxBlur blur = new BoxBlur(3,3,3);
+                    JFXDialogLayout Dialouglayout = new JFXDialogLayout();
+                    JFXButton btnclose = new JFXButton("Close");
+                    btnclose.getStyleClass().add("button1");
+                    JFXDialog Dialog = new JFXDialog(rootPane2 , Dialouglayout, JFXDialog.DialogTransition.TOP);
+                    btnclose.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent mouseevent )->{
+                        Dialog.close();
+                    });
+                    Dialouglayout.setHeading(new Label("Please Enter Correct Path "));
+                    Dialouglayout.setActions(btnclose);
+                    Dialog.show();
+                    Dialog.setOnDialogClosed((JFXDialogEvent event1 ) ->{
+                        AnchorPane2.setEffect(null);
+                    });
+                    AnchorPane2.setEffect(blur);
+
                     System.out.println("*** You Wrote Wrong Path of New File. ***");
+
                 }
 
                 // If original file extension and parts file extension does not match
                 else if(flag==0){
-                    System.out.println("####### New File Extension Doesn't Matched With Extension of Original File Part. ####### ");
+                    BoxBlur blur = new BoxBlur(3,3,3);
+                    JFXDialogLayout Dialouglayout = new JFXDialogLayout();
+                    JFXButton btnclose = new JFXButton("Close");
+                    btnclose.getStyleClass().add("button1");
+                    JFXDialog Dialog = new JFXDialog(rootPane2 , Dialouglayout, JFXDialog.DialogTransition.TOP);
+                    btnclose.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent mouseevent )->{
+                        Dialog.close();
+                    });
+                    Dialouglayout.setHeading(new Label("New File Extension Doesn't Match With Extension of Original File."));
+                    Dialouglayout.setActions(btnclose);
+                    Dialog.show();
+                    Dialog.setOnDialogClosed((JFXDialogEvent event1 ) ->{
+                        AnchorPane2.setEffect(null);
+                    });
+                    AnchorPane2.setEffect(blur);
                 }
 
                 // If entered wrong file name
                 else{
+                    BoxBlur blur = new BoxBlur(3,3,3);
+                    JFXDialogLayout Dialouglayout = new JFXDialogLayout();
+                    JFXButton btnclose = new JFXButton("Close");
+                    btnclose.getStyleClass().add("button1");
+                    JFXDialog Dialog = new JFXDialog(rootPane2 , Dialouglayout, JFXDialog.DialogTransition.TOP);
+                    btnclose.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent mouseevent )->{
+                        Dialog.close();
+                    });
+                    Dialouglayout.setHeading(new Label("File Path of First Part Doesn't Exist"));
+                    Dialouglayout.setActions(btnclose);
+                    Dialog.show();
+                    Dialog.setOnDialogClosed((JFXDialogEvent event1 ) ->{
+                        AnchorPane2.setEffect(null);
+                    });
+                    AnchorPane2.setEffect(blur);
                     System.out.println("####### File Path of First Part Doesn't Exist #######");
                 }
 

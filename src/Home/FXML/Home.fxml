@@ -16,7 +16,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to top left, #2A292F,#2E2C39 );" stylesheets="@../Home/CSS/Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.Controller.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to top left, #2A292F,#2E2C39 );" stylesheets="@../CSS/Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.Controller.HomeController">
    <children>
       <VBox prefHeight="500.0" prefWidth="163.0" style="-fx-background-color: #2A292F;" styleClass="bodybg" stylesheets="" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>

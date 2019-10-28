@@ -79,9 +79,9 @@ public class HomeController implements Initializable {
         if (event.getSource() == JoinMenu)
         {
             Parent JoinParent = FXMLLoader.load(getClass().getResource("../FXML/Join.fxml"));
-            Scene SplitScene = new Scene(JoinParent);
+            Scene JoinScene = new Scene(JoinParent);
             Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            window.setScene(SplitScene);
+            window.setScene(JoinScene);
             window.show();
             JoinParent.setOnMousePressed(event1 -> {
                 x = event1.getSceneX();
@@ -139,9 +139,9 @@ public class HomeController implements Initializable {
         if (event.getSource() == Join)
         {
             Parent JoinParent = FXMLLoader.load(getClass().getResource("../FXML/Join.fxml"));
-            Scene SplitScene = new Scene(JoinParent);
+            Scene JoinScene = new Scene(JoinParent);
             Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            window.setScene(SplitScene);
+            window.setScene(JoinScene);
             window.show();
             JoinParent.setOnMousePressed(event1 -> {
                 x = event1.getSceneX();

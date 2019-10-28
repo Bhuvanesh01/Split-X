@@ -58,3 +58,11 @@
 {
     -fx-background-color: linear-gradient(to bottom left, #A868A0, #2D75E8);
 }
+/* Dialog button styling */
+.dialog-button{
+-fx-background-color :  linear-gradient(to top left, #2A292F,#2E2C39 );
+    -fx-background-radius :  0 0 0 0;
+}
+.dialog-button : hover{
+ -fx-background-color :  linear-gradient(to top left, #2A292F,#616161 ) ;
+}

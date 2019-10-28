@@ -11,143 +11,174 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to top left, #2A292F,#2E2C39 );" stylesheets="@../Home/CSS/Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.Controller.JoinController">
-    <children>
-        <VBox prefHeight="500.0" prefWidth="163.0" style="-fx-background-color: #2A292F;" styleClass="bodybg" stylesheets="" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <children>
-                <ImageView fitHeight="102.0" fitWidth="158.0" pickOnBounds="true">
-               <image>
-                  <Image url="@../Images/Logo1.png" />
-               </image></ImageView>
-                <Button fx:id="Home" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="193.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="Home" textFill="#6dafca">
-                    <graphic>
-                        <ImageView fitHeight="36.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../Images/icons8-bungalow-512.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <padding>
-                        <Insets left="30.0" top="5.0" />
-                    </padding>
-                    <opaqueInsets>
-                        <Insets />
-                    </opaqueInsets>
-                    <VBox.margin>
-                        <Insets left="1.0" right="1.0" top="5.0" />
-                    </VBox.margin>
-                </Button>
-                <Button fx:id="JoinMenu" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="112.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="193.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="Join" textFill="#6dafca">
-                    <graphic>
-                        <ImageView fitHeight="36.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../Images/icons8-merge-files-512%20(1).png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <padding>
-                        <Insets left="30.0" top="5.0" />
-                    </padding>
-                    <VBox.margin>
-                        <Insets left="1.0" right="1.0" top="5.0" />
-                    </VBox.margin>
-                </Button>
-                <Button fx:id="SplitMenu" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="112.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="193.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="Split" textFill="#6dafca">
-                    <graphic>
-                        <ImageView fitHeight="36.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../Images/icons8-split-files-512.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <padding>
-                        <Insets left="30.0" top="5.0" />
-                    </padding>
-                    <VBox.margin>
-                        <Insets left="1.0" right="1.0" top="5.0" />
-                    </VBox.margin>
-                </Button>
-                <Button fx:id="Help" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="112.0" mnemonicParsing="false" onAction="#HandleClicks" prefHeight="26.0" prefWidth="193.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="Help" textFill="#6dafca">
-                    <graphic>
-                        <ImageView fitHeight="36.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../Images/help%20(1).png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <padding>
-                        <Insets left="30.0" top="5.0" />
-                    </padding>
-                    <VBox.margin>
-                        <Insets left="1.0" right="1.0" top="5.0" />
-                    </VBox.margin>
-                </Button>
-                <Button fx:id="About" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="112.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="193.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="About Us" textFill="#6dafca">
-                    <graphic>
-                        <ImageView fitHeight="36.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../Images/png.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <padding>
-                        <Insets left="30.0" top="5.0" />
-                    </padding>
-                    <VBox.margin>
-                        <Insets left="1.0" right="1.0" top="5.0" />
-                    </VBox.margin>
-                </Button>
-                <Button fx:id="Close" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="112.0" mnemonicParsing="false" onMouseClicked="#ExitApp" prefHeight="26.0" prefWidth="193.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="Exit" textFill="#6dafca">
-                    <graphic>
-                        <ImageView fitHeight="36.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../Images/logout.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <padding>
-                        <Insets left="30.0" top="5.0" />
-                    </padding>
-                    <VBox.margin>
-                        <Insets left="1.0" right="1.0" top="5.0" />
-                    </VBox.margin>
-                </Button>
-            </children>
-            <effect>
-                <Lighting bumpInput="$null">
-                    <light>
-                        <Light.Distant />
-                    </light>
-                </Lighting>
-            </effect>
-        </VBox>
-        <HBox layoutX="181.0" layoutY="43.0" prefHeight="90.0" prefWidth="620.0">
-            <children>
-                <Label alignment="CENTER" prefHeight="91.0" prefWidth="620.0" text="File Splitter And Joiner Application" textFill="#6dafca">
-                    <font>
-                        <Font name="Microsoft Tai Le" size="26.0" />
-                    </font>
-                </Label>
-            </children>
-        </HBox>
-        <JFXButton fx:id="BtnClose" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="768.0" layoutY="1.0" onMouseClicked="#ExitApp" prefHeight="24.0" prefWidth="28.0" ripplerFill="#e80606" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="1.0">
-            <graphic>
-                <ImageView fitHeight="11.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../Images/loschen.png" />
-                    </image>
-                </ImageView>
-            </graphic>
-        </JFXButton>
-        <Button fx:id="Browse" layoutX="646.0" layoutY="203.0" mnemonicParsing="false" onAction="#HandleClicks" prefHeight="34.0" prefWidth="54.0" text="Browse" />
-        <TextField fx:id="txt" layoutX="251.0" layoutY="203.0" prefHeight="34.0" prefWidth="361.0" />
-        <Button fx:id="Joins" layoutX="376.0" layoutY="382.0" mnemonicParsing="false" onAction="#Joinit" prefHeight="34.0" prefWidth="143.0" styleClass="linear-grad" stylesheets="@../CSS/Style.css" text="Join" />
-      <TextField fx:id="txt1" layoutX="251.0" layoutY="262.0" prefHeight="34.0" prefWidth="361.0" />
-      <Button fx:id="Save" layoutX="646.0" layoutY="262.0" mnemonicParsing="false" onAction="#HandleClicks" prefHeight="34.0" prefWidth="54.0" text="Save" />
-
-
-    </children>
-</AnchorPane>
+<StackPane fx:id="rootPane2" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.Controller.JoinController">
+   <children>
+      <AnchorPane fx:id="AnchorPane2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to top left, #2A292F,#2E2C39 );" stylesheets="@../CSS/Style.css">
+          <children>
+              <VBox prefHeight="500.0" prefWidth="163.0" style="-fx-background-color: #2A292F;" styleClass="bodybg" stylesheets="" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                      <ImageView fitHeight="102.0" fitWidth="158.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../Images/Logo1.png" />
+                     </image>
+                  </ImageView>
+                      <Button fx:id="Home" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#HandleClicks" prefHeight="26.0" prefWidth="193.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="Home" textFill="#6dafca">
+                          <graphic>
+                              <ImageView fitHeight="36.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@../Images/icons8-bungalow-512.png" />
+                                  </image>
+                              </ImageView>
+                          </graphic>
+                          <padding>
+                              <Insets left="30.0" top="5.0" />
+                          </padding>
+                          <opaqueInsets>
+                              <Insets />
+                          </opaqueInsets>
+                          <VBox.margin>
+                              <Insets left="1.0" right="1.0" top="5.0" />
+                          </VBox.margin>
+                      </Button>
+                      <Button fx:id="JoinMenu" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="112.0" mnemonicParsing="false" onAction="#HandleClicks" prefHeight="26.0" prefWidth="193.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="Join" textFill="#6dafca">
+                          <graphic>
+                              <ImageView fitHeight="36.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@../Images/icons8-merge-files-512%20(1).png" />
+                                  </image>
+                              </ImageView>
+                          </graphic>
+                          <padding>
+                              <Insets left="30.0" top="5.0" />
+                          </padding>
+                          <VBox.margin>
+                              <Insets left="1.0" right="1.0" top="5.0" />
+                          </VBox.margin>
+                      </Button>
+                      <Button fx:id="SplitMenu" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="112.0" mnemonicParsing="false" onAction="#HandleClicks" prefHeight="26.0" prefWidth="193.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="Split" textFill="#6dafca">
+                          <graphic>
+                              <ImageView fitHeight="36.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@../Images/icons8-split-files-512.png" />
+                                  </image>
+                              </ImageView>
+                          </graphic>
+                          <padding>
+                              <Insets left="30.0" top="5.0" />
+                          </padding>
+                          <VBox.margin>
+                              <Insets left="1.0" right="1.0" top="5.0" />
+                          </VBox.margin>
+                      </Button>
+                      <Button fx:id="Help" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="112.0" mnemonicParsing="false" onAction="#HandleClicks" prefHeight="26.0" prefWidth="193.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="Help" textFill="#6dafca">
+                          <graphic>
+                              <ImageView fitHeight="36.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@../Images/help%20(1).png" />
+                                  </image>
+                              </ImageView>
+                          </graphic>
+                          <padding>
+                              <Insets left="30.0" top="5.0" />
+                          </padding>
+                          <VBox.margin>
+                              <Insets left="1.0" right="1.0" top="5.0" />
+                          </VBox.margin>
+                      </Button>
+                      <Button fx:id="About" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="112.0" mnemonicParsing="false" onAction="#HandleClicks" prefHeight="26.0" prefWidth="193.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="About Us" textFill="#6dafca">
+                          <graphic>
+                              <ImageView fitHeight="36.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@../Images/png.png" />
+                                  </image>
+                              </ImageView>
+                          </graphic>
+                          <padding>
+                              <Insets left="30.0" top="5.0" />
+                          </padding>
+                          <VBox.margin>
+                              <Insets left="1.0" right="1.0" top="5.0" />
+                          </VBox.margin>
+                      </Button>
+                      <Button fx:id="Close" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="112.0" mnemonicParsing="false" onMouseClicked="#ExitApp" prefHeight="26.0" prefWidth="193.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="Exit" textFill="#6dafca">
+                          <graphic>
+                              <ImageView fitHeight="36.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@../Images/logout.png" />
+                                  </image>
+                              </ImageView>
+                          </graphic>
+                          <padding>
+                              <Insets left="30.0" top="5.0" />
+                          </padding>
+                          <VBox.margin>
+                              <Insets left="1.0" right="1.0" top="5.0" />
+                          </VBox.margin>
+                      </Button>
+                  </children>
+                  <effect>
+                      <Lighting bumpInput="$null">
+                          <light>
+                              <Light.Distant />
+                          </light>
+                      </Lighting>
+                  </effect>
+              </VBox>
+              <HBox layoutX="181.0" layoutY="43.0" prefHeight="90.0" prefWidth="620.0">
+                  <children>
+                      <Label alignment="CENTER" prefHeight="91.0" prefWidth="620.0" text="File Splitter And Joiner Application" textFill="#6dafca">
+                          <font>
+                              <Font name="Microsoft Tai Le" size="26.0" />
+                          </font>
+                      </Label>
+                  </children>
+              </HBox>
+              <JFXButton fx:id="BtnClose" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="768.0" layoutY="1.0" onMouseClicked="#ExitApp" prefHeight="24.0" prefWidth="28.0" ripplerFill="#e80606" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="1.0">
+                  <graphic>
+                      <ImageView fitHeight="11.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@../Images/loschen.png" />
+                          </image>
+                      </ImageView>
+                  </graphic>
+              </JFXButton>
+              <Button fx:id="Browse" layoutX="646.0" layoutY="193.0" mnemonicParsing="false" onAction="#HandleClicks" prefHeight="34.0" prefWidth="54.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="Browse" textFill="#6dafca" />
+              <TextField fx:id="txt" layoutX="250.0" layoutY="193.0" prefHeight="34.0" prefWidth="361.0" />
+              <Button fx:id="Joins" layoutX="376.0" layoutY="382.0" mnemonicParsing="false" onAction="#Joinit" prefHeight="34.0" prefWidth="143.0" styleClass="linear-grad" stylesheets="@../CSS/Style.css" text="Join" />
+            <TextField fx:id="txt1" layoutX="251.0" layoutY="279.0" prefHeight="34.0" prefWidth="361.0" />
+            <Button fx:id="Save" layoutX="646.0" layoutY="279.0" mnemonicParsing="false" onAction="#HandleClicks" prefHeight="34.0" prefWidth="54.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="Save" textFill="#6dafca" />
+            <Label layoutX="250.0" layoutY="170.0" prefHeight="16.0" prefWidth="362.0" text="Select the First Part of the File : " textFill="#6dafca">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="250.0" layoutY="242.0" prefHeight="16.0" prefWidth="362.0" text="Enter The Name You Want to Save Your File With And " textFill="#6dafca">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="250.0" layoutY="320.0" prefHeight="26.0" prefWidth="362.0" text="Note : Please Name The File With Original Extension Only." textFill="#6dafca">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="250.0" layoutY="333.0" prefHeight="26.0" prefWidth="362.0" text="Do Not Change The Extension." textFill="#6dafca">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="250.0" layoutY="258.0" prefHeight="16.0" prefWidth="362.0" text="Select Where You Want to Save Your File After Joining :" textFill="#6dafca">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="13.0" />
+               </font>
+            </Label>
+      
+      
+          </children>
+      </AnchorPane>
+   </children>
+</StackPane>
