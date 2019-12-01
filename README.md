@@ -6,4 +6,4 @@ big files to small parts and wants to either send/store or upload these small fi
 
 # Features
 
-![Features](https://github.com/Bhuvanesh01/FileSplitterAndJoiner/tree/master/src/Home/Images/Capture.png)
+![Features](/Images/Capture.png)
