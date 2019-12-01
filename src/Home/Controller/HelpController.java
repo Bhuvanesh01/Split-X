@@ -21,7 +21,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class HomeController implements Initializable {
+public class HelpController implements Initializable {
     private double x, y;
 
     @FXML
@@ -52,10 +52,10 @@ public class HomeController implements Initializable {
     private JFXButton BtnClose;
 
     @FXML
-    private Hyperlink HyperLink;
+    private Hyperlink HyperLink2;
 
     @FXML
-    private Hyperlink HyperLink2;
+    private Hyperlink HyperLink3;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -83,9 +83,9 @@ public class HomeController implements Initializable {
             });
         }
         else
-            {
+        {
 
-            }
+        }
         if (event.getSource() == JoinMenu)
         {
             Parent JoinParent = FXMLLoader.load(getClass().getResource("../FXML/Join.fxml"));
@@ -219,26 +219,6 @@ public class HomeController implements Initializable {
         {
 
         }
-        if (event.getSource() == HyperLink)
-        {
-
-            HyperLink.setOnAction(e -> {
-                if(Desktop.isDesktopSupported())
-                {
-                    try {
-                        Desktop.getDesktop().browse(new URI("http://www.splitx.ga"));
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    } catch (URISyntaxException e1) {
-                        e1.printStackTrace();
-                    }
-                }
-            });
-        }
-        else
-        {
-
-        }
         if (event.getSource() == HyperLink2)
         {
 
@@ -246,7 +226,7 @@ public class HomeController implements Initializable {
                 if(Desktop.isDesktopSupported())
                 {
                     try {
-                        Desktop.getDesktop().browse(new URI("http://www.splitx.ga/contact/"));
+                        Desktop.getDesktop().browse(new URI("http://www.splitx.ga/faq/"));
                     } catch (IOException e1) {
                         e1.printStackTrace();
                     } catch (URISyntaxException e1) {

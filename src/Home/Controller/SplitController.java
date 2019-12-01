@@ -138,7 +138,21 @@ public class SplitController implements Initializable {
         }
         if (event.getSource() == Help)
         {
+            Parent SplitParent = FXMLLoader.load(getClass().getResource("../FXML/Help.fxml"));
+            Scene SplitScene = new Scene(SplitParent);
+            Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            window.setScene(SplitScene);
+            window.show();
+            SplitParent.setOnMousePressed(event1 -> {
+                x = event1.getSceneX();
+                y = event1.getSceneY();
+            });
+            SplitParent.setOnMouseDragged(event1 -> {
 
+                window.setX(event1.getScreenX() - x);
+                window.setY(event1.getScreenY() - y);
+
+            });
         }
         else
         {
@@ -146,6 +160,21 @@ public class SplitController implements Initializable {
         }
         if (event.getSource() == About)
         {
+            Parent SplitParent = FXMLLoader.load(getClass().getResource("../FXML/About.fxml"));
+            Scene SplitScene = new Scene(SplitParent);
+            Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            window.setScene(SplitScene);
+            window.show();
+            SplitParent.setOnMousePressed(event1 -> {
+                x = event1.getSceneX();
+                y = event1.getSceneY();
+            });
+            SplitParent.setOnMouseDragged(event1 -> {
+
+                window.setX(event1.getScreenX() - x);
+                window.setY(event1.getScreenY() - y);
+
+            });
 
         }
         else

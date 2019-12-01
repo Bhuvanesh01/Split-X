@@ -4,7 +4,6 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
 import com.jfoenix.controls.events.JFXDialogEvent;
-import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,7 +21,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -150,7 +148,21 @@ public class JoinController implements Initializable {
             }
             if (event.getSource() == Help)
             {
+                Parent SplitParent = FXMLLoader.load(getClass().getResource("../FXML/Help.fxml"));
+                Scene SplitScene = new Scene(SplitParent);
+                Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+                window.setScene(SplitScene);
+                window.show();
+                SplitParent.setOnMousePressed(event1 -> {
+                    x = event1.getSceneX();
+                    y = event1.getSceneY();
+                });
+                SplitParent.setOnMouseDragged(event1 -> {
 
+                    window.setX(event1.getScreenX() - x);
+                    window.setY(event1.getScreenY() - y);
+
+                });
             }
             else
             {
@@ -158,7 +170,21 @@ public class JoinController implements Initializable {
             }
             if (event.getSource() == About)
             {
+                Parent SplitParent = FXMLLoader.load(getClass().getResource("../FXML/About.fxml"));
+                Scene SplitScene = new Scene(SplitParent);
+                Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+                window.setScene(SplitScene);
+                window.show();
+                SplitParent.setOnMousePressed(event1 -> {
+                    x = event1.getSceneX();
+                    y = event1.getSceneY();
+                });
+                SplitParent.setOnMouseDragged(event1 -> {
 
+                    window.setX(event1.getScreenX() - x);
+                    window.setY(event1.getScreenY() - y);
+
+                });
             }
             else
             {
@@ -169,7 +195,6 @@ public class JoinController implements Initializable {
         {
             FileChooser fc = new FileChooser();
             File SelectedFile = fc.showSaveDialog(null);
-
             if (SelectedFile != null)
             {
                 txt1.setText(SelectedFile.getAbsolutePath());

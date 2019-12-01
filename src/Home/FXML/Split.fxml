@@ -146,7 +146,7 @@
                       </ImageView>
                   </graphic>
               </JFXButton>
-            <Button fx:id="Browse" layoutX="646.0" layoutY="203.0" mnemonicParsing="false" onAction="#HandleClicks" prefHeight="34.0" prefWidth="54.0" styleClass="linear-grad" stylesheets="@../CSS/Style.css" text="Browse" />
+            <Button fx:id="Browse" layoutX="646.0" layoutY="203.0" mnemonicParsing="false" onAction="#HandleClicks" prefHeight="34.0" prefWidth="54.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="Browse" textFill="#6dafca" />
             <TextField fx:id="txt" layoutX="251.0" layoutY="203.0" prefHeight="34.0" prefWidth="361.0" />
             <Button fx:id="Splits" layoutX="377.0" layoutY="343.0" mnemonicParsing="false" onAction="#Splitit" prefHeight="34.0" prefWidth="143.0" styleClass="linear-grad" stylesheets="@../CSS/Style.css" text="Split" />
             <Label layoutX="250.0" layoutY="176.0" prefHeight="26.0" prefWidth="362.0" text=" Select The File You Want To Split : " textFill="#6dafca">
