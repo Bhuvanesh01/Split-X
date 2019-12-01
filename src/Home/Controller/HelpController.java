@@ -52,10 +52,10 @@ public class HelpController implements Initializable {
     private JFXButton BtnClose;
 
     @FXML
-    private Hyperlink HyperLink2;
+    private Hyperlink HyperLink1;
 
     @FXML
-    private Hyperlink HyperLink3;
+    private Hyperlink HyperLink2;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -219,6 +219,26 @@ public class HelpController implements Initializable {
         {
 
         }
+        if (event.getSource() == HyperLink1)
+        {
+
+            HyperLink1.setOnAction(e -> {
+                if(Desktop.isDesktopSupported())
+                {
+                    try {
+                        Desktop.getDesktop().browse(new URI("http://www.splitx.ga/faq/"));
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    } catch (URISyntaxException e1) {
+                        e1.printStackTrace();
+                    }
+                }
+            });
+        }
+        else
+        {
+
+        }
         if (event.getSource() == HyperLink2)
         {
 
@@ -226,7 +246,7 @@ public class HelpController implements Initializable {
                 if(Desktop.isDesktopSupported())
                 {
                     try {
-                        Desktop.getDesktop().browse(new URI("http://www.splitx.ga/faq/"));
+                        Desktop.getDesktop().browse(new URI("http://www.splitx.ga/contact/"));
                     } catch (IOException e1) {
                         e1.printStackTrace();
                     } catch (URISyntaxException e1) {

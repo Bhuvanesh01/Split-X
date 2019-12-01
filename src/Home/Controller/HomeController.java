@@ -54,9 +54,6 @@ public class HomeController implements Initializable {
     @FXML
     private Hyperlink HyperLink;
 
-    @FXML
-    private Hyperlink HyperLink2;
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     }
@@ -239,26 +236,7 @@ public class HomeController implements Initializable {
         {
 
         }
-        if (event.getSource() == HyperLink2)
-        {
 
-            HyperLink2.setOnAction(e -> {
-                if(Desktop.isDesktopSupported())
-                {
-                    try {
-                        Desktop.getDesktop().browse(new URI("http://www.splitx.ga/contact/"));
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    } catch (URISyntaxException e1) {
-                        e1.printStackTrace();
-                    }
-                }
-            });
-        }
-        else
-        {
-
-        }
 
     }
     @FXML

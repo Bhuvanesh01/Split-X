@@ -144,36 +144,26 @@
         </JFXButton>
         <AnchorPane layoutX="181.0" layoutY="121.0" prefHeight="358.0" prefWidth="620.0">
          <children>
-            <Hyperlink fx:id="HyperLink" layoutX="56.0" layoutY="179.0" onAction="#HandleClicks" prefHeight="26.0" prefWidth="143.0" text="http://www.splitx.ga" textFill="#6dafca">
-               <font>
-                  <Font name="Microsoft Tai Le" size="14.0" />
-               </font>
-            </Hyperlink>
-            <Label ellipsisString="" layoutX="41.0" layoutY="14.0" prefHeight="139.0" prefWidth="538.0" text="It is a software developed in java for splitting up files and merging them. As it is usually easier to send/receive, upload/download smaller parts than handle the entire file in one go. So through this software, a user who wants to split big files to small parts and wants to either send/store or upload these small files can do these stuff easily." textFill="#6dafca" wrapText="true">
-               <font>
-                  <Font name="Microsoft Tai Le" size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="41.0" layoutY="153.0" prefHeight="34.0" prefWidth="143.0" text="To Know More Visit:" textFill="#6dafca">
-               <font>
-                  <Font name="Microsoft Tai Le" size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="41.0" layoutY="207.0" prefHeight="34.0" prefWidth="143.0" text="Contact Us " textFill="#6dafca">
-               <font>
-                  <Font name="Microsoft Tai Le" size="14.0" />
-               </font>
-            </Label>
-            <Hyperlink fx:id="HyperLink2" layoutX="56.0" layoutY="234.0" onAction="#HandleClicks" prefHeight="28.0" prefWidth="202.0" text="http://www.splitx.ga/contact/" textFill="#6dafca">
-               <font>
-                  <Font name="Microsoft Tai Le" size="14.0" />
-               </font>
-            </Hyperlink>
             <ImageView blendMode="OVERLAY" fitHeight="356.0" fitWidth="618.0" pickOnBounds="true">
                <image>
                   <Image url="@../Images/undraw_team_page_pgpr.png" />
                </image>
             </ImageView>
+            <Hyperlink fx:id="HyperLink" layoutX="58.0" layoutY="224.0" onAction="#HandleClicks" prefHeight="26.0" prefWidth="143.0" text="http://www.splitx.ga" textFill="#6dafca">
+               <font>
+                  <Font name="Microsoft Tai Le" size="14.0" />
+               </font>
+            </Hyperlink>
+            <Label ellipsisString="" layoutX="41.0" layoutY="14.0" prefHeight="178.0" prefWidth="538.0" text="It is a software developed in java for splitting up files and merging them. As it is usually easier to send/receive, upload/download smaller parts than handle the entire file in one go. So through this software, a user who wants to split big files to small parts and wants to either send/store or upload these small files can do these stuff easily." textFill="#6dafca" wrapText="true">
+               <font>
+                  <Font name="Microsoft Tai Le" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="196.0" prefHeight="34.0" prefWidth="143.0" text="To Learn More Visit:" textFill="#6dafca">
+               <font>
+                  <Font name="Microsoft Tai Le" size="14.0" />
+               </font>
+            </Label>
          </children>
         </AnchorPane>
 

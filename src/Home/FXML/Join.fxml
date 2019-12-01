@@ -150,13 +150,13 @@
               <TextField fx:id="txt" layoutX="250.0" layoutY="193.0" prefHeight="34.0" prefWidth="361.0" />
               <Button fx:id="Joins" layoutX="376.0" layoutY="382.0" mnemonicParsing="false" onAction="#Joinit" prefHeight="34.0" prefWidth="143.0" styleClass="linear-grad" stylesheets="@../CSS/Style.css" text="Join" />
             <TextField fx:id="txt1" layoutX="251.0" layoutY="279.0" prefHeight="34.0" prefWidth="361.0" />
-            <Button fx:id="Save" layoutX="646.0" layoutY="279.0" mnemonicParsing="false" onAction="#HandleClicks" prefHeight="34.0" prefWidth="54.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="Save" textFill="#6dafca" />
+            <Button fx:id="Save" layoutX="646.0" layoutY="279.0" mnemonicParsing="false" onAction="#HandleClicks" prefHeight="34.0" prefWidth="54.0" styleClass="button1" stylesheets="@../CSS/Style.css" text="Browse" textFill="#6dafca" />
             <Label layoutX="250.0" layoutY="170.0" prefHeight="16.0" prefWidth="362.0" text="Select the First Part of the File : " textFill="#6dafca">
                <font>
                   <Font name="Arial Rounded MT Bold" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="250.0" layoutY="242.0" prefHeight="16.0" prefWidth="362.0" text="Enter The Name You Want to Save Your File With And " textFill="#6dafca">
+            <Label layoutX="250.0" layoutY="242.0" prefHeight="16.0" prefWidth="370.0" text="Select Where You Want to Save Your File  And Name the" textFill="#6dafca">
                <font>
                   <Font name="Arial Rounded MT Bold" size="13.0" />
                </font>
@@ -171,7 +171,7 @@
                   <Font name="Arial Rounded MT Bold" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="250.0" layoutY="258.0" prefHeight="16.0" prefWidth="362.0" text="Select Where You Want to Save Your File After Joining :" textFill="#6dafca">
+            <Label layoutX="250.0" layoutY="258.0" prefHeight="16.0" prefWidth="362.0" text="File With Proper Extension : " textFill="#6dafca">
                <font>
                   <Font name="Arial Rounded MT Bold" size="13.0" />
                </font>
