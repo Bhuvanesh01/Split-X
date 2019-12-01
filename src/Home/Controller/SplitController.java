@@ -11,10 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -27,7 +24,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class SplitController implements Initializable {
-    private double x, y;
+    private double x, y, value ,  value_updated;
     String Path = null;
     @FXML
     private StackPane rootPane;
@@ -62,6 +59,8 @@ public class SplitController implements Initializable {
     @FXML
     private TextField txt;
 
+    @FXML
+    private Spinner<Integer> spinner ;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -199,7 +198,8 @@ public class SplitController implements Initializable {
     }
     @FXML
     public Void Splitit(ActionEvent event)
-    {
+    {   value = spinner.getValue();
+        value_updated = (value*1000000) ;
         try{
         //Create Byte Array with 10,00,000 bytes size
         byte b[] = new byte[1000000];
@@ -220,7 +220,7 @@ public class SplitController implements Initializable {
                 s = Path+".0"+x; // FileName.mp4.010, FileName.mp4.011, ...... so on
             }
             FileOutputStream fos = new FileOutputStream(s);
-            while(j<=50000000 && fis.available()!=0) {
+            while(j<= value_updated && fis.available()!=0) {
                 read_bytes = fis.read(b, 0, 1000000);
                 j = j + read_bytes;
                 fos.write(b, 0, read_bytes);
