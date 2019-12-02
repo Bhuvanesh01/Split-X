@@ -166,6 +166,7 @@
                     <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="00" max="10000" min="0" />
                   </valueFactory>
               </Spinner>
+      
           </children>
       </AnchorPane>
    </children>
