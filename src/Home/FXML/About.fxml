@@ -18,7 +18,7 @@
     <children>
         <VBox prefHeight="500.0" prefWidth="163.0" style="-fx-background-color: #2A292F;" styleClass="bodybg" stylesheets="" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <ImageView fitHeight="102.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="102.0" fitWidth="158.0" pickOnBounds="true">
                     <image>
                         <Image url="@../Images/Logo1.png" />
                     </image></ImageView>
@@ -144,7 +144,7 @@
         </JFXButton>
         <AnchorPane layoutX="181.0" layoutY="121.0" prefHeight="358.0" prefWidth="620.0">
          <children>
-            <ImageView blendMode="OVERLAY" fitHeight="356.0" fitWidth="618.0" pickOnBounds="true">
+            <ImageView blendMode="OVERLAY" fitHeight="356.0" fitWidth="636.0" layoutX="-18.0" pickOnBounds="true">
                <image>
                   <Image url="@../Images/undraw_team_page_pgpr.png" />
                </image>
