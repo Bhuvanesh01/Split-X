@@ -7,3 +7,12 @@ big files to small parts and wants to either send/store or upload these small fi
 # Features
 
 ![Features](https://github.com/Bhuvanesh01/FileSplitterAndJoiner/blob/master/src/Home/Images/Capture.PNG)
+
+# Screenshots
+
+![Screenshots](https://github.com/Bhuvanesh01/FileSplitterAndJoiner/blob/master/src/Home/Images/1.PNG)
+
+![Screenshots](https://github.com/Bhuvanesh01/FileSplitterAndJoiner/blob/master/src/Home/Images/2.PNG)
+
+![Screenshots](https://github.com/Bhuvanesh01/FileSplitterAndJoiner/blob/master/src/Home/Images/3.PNG)
+
