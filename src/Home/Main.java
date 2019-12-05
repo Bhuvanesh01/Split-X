@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.image.Image;
 import javafx.stage.StageStyle;
 
 
@@ -18,6 +19,7 @@ public class Main extends Application {
         //set stage borderless
         primaryStage.initStyle(StageStyle.UNDECORATED);
         //drag it here
+        primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("Images/Logo2.png")));
         root.setOnMousePressed(event -> {
             x = event.getSceneX();
             y = event.getSceneY();
