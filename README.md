@@ -1,4 +1,4 @@
-# FileSplitterAndJoiner
+# Split-X
 
 It is a software developed in java for splitting up files and merging them. As it is usually easier to send/receive,
 upload/download smaller parts than handle the entire file in one go. So through this software, a user who wants to split
